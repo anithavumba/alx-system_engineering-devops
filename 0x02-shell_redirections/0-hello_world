@@ -1,0 +1,5 @@
+#!/bin/bash
+printf Hello, World n >> 0-hello_world
+cat 0-hello_world
+cat 0-hello_world
+echo printf Hello, World\n
