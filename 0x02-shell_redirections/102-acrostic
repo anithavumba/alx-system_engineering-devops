@@ -1,2 +1,3 @@
 #!/bin/bash
-cut -c l past -c -d ''
+cut -c l paste -c -d ''
+
