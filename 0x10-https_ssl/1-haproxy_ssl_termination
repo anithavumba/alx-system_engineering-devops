@@ -1,4 +1,4 @@
-frontend        anitha-frontend
+frontend	anitha-frontend
         bind *:80
         mode http
         timeout client 30s
@@ -6,7 +6,7 @@ frontend        anitha-frontend
 # Add a frontend to handle incoming HTTPS connections
 frontend anitha-https
         # Bind 443 with the generated letsencrypt cert.
-        bind *:443 ssl crt /etc/haproxy/certs/www.theautoapp.tech.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/theautoapp.tech/fullchain.pem
         # Select a Challenge
         acl letsencrypt-acl path_beg /.well-known/acme-challenge/
         # Use the challenge backend if the challenge is set
@@ -17,7 +17,7 @@ frontend anitha-https
 backend anitha-backend
         mode http
         balance roundrobin
-        server 110961-web-01 34.207.253.142:80 check
+        server 110961-web-01 35.153.50.195:80 check
         server 110961-web-02 100.25.103.37:80 check
         timeout server 30s
         timeout connect 5s
